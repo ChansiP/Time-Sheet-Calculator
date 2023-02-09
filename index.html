@@ -1,0 +1,325 @@
+
+    
+<html>
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <style>
+      #timesheet {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#timesheet td, #timesheet th {
+
+ 
+  padding: 8px;
+}
+
+#timesheet tr:nth-child(odd){background-color: #f2f2f2;}
+
+#timesheet tr:hover {background-color: #ddd;}
+
+#timesheet th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1a1072;
+  color: white;
+  
+}
+.shadow {
+    box-shadow: 0px 0px 10px 10px #ccc;
+  }
+  tr {
+  height: 50px;
+}
+td{
+    font-weight: bold;
+    font-size: 15px;
+}
+th{
+    font-weight: normal;
+    font-size: 15px;
+    
+    
+}
+table tr:first-child th:first-child {
+  border-top-left-radius: 6px;
+}
+
+/* top-right border-radius */
+table tr:first-child th:last-child {
+  border-top-right-radius: 6px;
+}
+
+/* bottom-left border-radius */
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+/* bottom-right border-radius */
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+button {
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  background-color:  #d3d0d0;
+  box-shadow: 0px 1.5px 2px #333;
+  font-size: 14px;
+  text-align: left;
+  
+  display: inline-block;
+  height: 40px;
+  width: 150px;
+}
+.btn {
+  text-align: center;
+  color: rgb(90, 90, 90);
+}
+
+
+   
+    </style>
+  </head>
+  <body>
+    <div class="shadow">
+    <table id="timeSheet" >
+      <tr>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Break Deduction </th>
+        <th >Total </th>
+      </tr>
+      <tr>
+        <td ><b>Monday</b></td>
+        <td><input type="number" id="starthour0" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+    <input type="number" id="startmin0" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2">
+    <select id="start-am-pm0" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+        <option value="am">AM</option>
+        <option value="pm">PM</option>
+      </select></td>
+        
+      <td><input type="number" id="endhour0" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+        <input type="number" id="endmin0" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2">
+        <select id="end-am-pm0" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+          </select></td>
+        <td>
+            <input type="number" id="breakhour0" style="width: 35px;height: 30px; font-size: 12px;  border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+            <input type="number" id="breakmin0" style="width: 35px;height: 30px; font-size: 12px;  border-radius: 5px; border: 1.5px solid gray;" size="2">
+            </td>
+        <td><div id="totalHours0" >
+           </td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td><input type="number" id="starthour1" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+            <input type="number" id="startmin1" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+            <select id="start-am-pm1" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select></td>
+              <td><input type="number" id="endhour1" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+                <input type="number" id="endmin1" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <select id="end-am-pm1" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select></td>
+        <td>
+            <input type="number" id="breakhour1" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+            <input type="number" id="breakmin1" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2">
+            </td>
+        <td><div id="totalHours1" ></td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td><input type="number" id="starthour2" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+            <input type="number" id="startmin2" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+            <select id="start-am-pm2" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select></td>
+              <td><input type="number" id="endhour2" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+                <input type="number" id="endmin2" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <select id="end-am-pm2" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select></td>
+        <td>
+            <input type="number" id="breakhour2" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+            <input type="number" id="breakmin2" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2">
+            </td>
+        <td><div id="totalHours2" ></td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td><input type="number" id="starthour3" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+            <input type="number" id="startmin3" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+            <select id="start-am-pm3" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select></td>
+              <td><input type="number" id="endhour3" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+                <input type="number" id="endmin3" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <select id="end-am-pm3" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select></td>
+        <td>
+            <input type="number" id="breakhour3" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+            <input type="number" id="breakmin3" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2">
+            </td>
+        <td><div id="totalHours3" ></td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td><input type="number" id="starthour4" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+            <input type="number" id="startmin4" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+            <select id="start-am-pm4" style="width: 50px;height: 30px; font-size: 12px;border-radius: 5px; border: 1.5px solid gray;">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select></td>
+              <td><input type="number" id="endhour4" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+                <input type="number" id="endmin4" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <select id="end-am-pm4" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select></td>
+        <td>
+            <input type="number" id="breakhour4" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+            <input type="number" id="breakmin4" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2">
+            </td>
+        <td><div id="totalHours4" ></td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td><input type="number" id="starthour5" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+            <input type="number" id="startmin5" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+            <select id="start-am-pm5" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select></td>
+              <td><input type="number" id="endhour5" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;"> :
+                <input type="number" id="endmin5" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <select id="end-am-pm5" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select></td>
+        <td>
+            <input type="number" id="breakhour5" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+            <input type="number" id="breakmin5" style="width: 35px;height: 30px; font-size: 12px;border-radius: 5px; border: 1.5px solid gray; " size="2">
+            </td>
+        <td><div id="totalHours5" ></td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td><input type="number" id="starthour6" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray; "> :
+            <input type="number" id="startmin6" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+            <select id="start-am-pm6" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select></td>
+              <td><input type="number" id="endhour6" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray; "> :
+                <input type="number" id="endmin6" style="width: 35px;height: 30px; font-size: 12px;border-radius: 5px; border: 1.5px solid gray;">
+                <select id="end-am-pm6" style="width: 50px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select></td>
+        <td>
+            <input type="number" id="breakhour6" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray;" size="2"> :
+            <input type="number" id="breakmin6" style="width: 35px;height: 30px; font-size: 12px; border-radius: 5px; border: 1.5px solid gray; " size="2">
+           </td>
+        <td><div id="totalHours6" ></td>
+      </tr>
+      <tfoot  >
+      <tr>
+        <td colspan="3" ></td> <td style="font-size: 18px;">Total Hours:</td>
+    <td ><div id="result" ></div></td></tr>
+</tfoot>
+      
+      </table>
+      
+      </div>
+      <br><br>
+      <button onclick="calculate()" type="button" class="btn btn-primary btn-lg"><i class="fas fa-calculator"></i>  CALCULATE </button>
+      <button class="btn btn-secondary"id="clear"><i class="fas fa-times"></i>  CLEAR ALL</button>
+      <div id="result" ></div>
+
+      <script>
+        document.getElementById("clear").addEventListener("click", function() {
+            let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday','Saturday','Sunday'];
+  for (let i = 0; i < days.length; i++) {
+    document.getElementById("starthour" + i).value = "";
+    document.getElementById("startmin"+i).value="";
+    document.getElementById('start-am-pm'+i).value="";
+    document.getElementById("endhour" + i).value = "";
+    document.getElementById("endmin"+i).value="";
+    document.getElementById('end-am-pm'+i).value="";
+    document.getElementById("break" + i).value = "";
+    document.getElementById("totalHours" + i).innerHTML = "";
+  }
+  document.getElementById("result").innerHTML = "";
+});
+      function calculate() {
+  let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday','Saturday','Sunday'];
+  let totalMinutes = 0;
+
+  for (let i = 0; i < days.length; i++) {
+  // Get the values from the start time, end time, and break duration inputs
+  var starthours = document.getElementById("starthour" + i).value;
+  var startmin = document.getElementById("startmin" + i).value;
+  var startamPm = document.getElementById("start-am-pm" + i).value;
+  var endhours = document.getElementById("endhour" + i).value;
+  var endmin = document.getElementById("endmin" + i).value;
+  var endamPm = document.getElementById("end-am-pm" + i).value;
+  var breakHours = parseInt(document.getElementById("breakhour" + i).value, 10);
+  var breakMinutes = parseInt(document.getElementById("breakmin" + i).value, 10);
+  var breakDuration = breakHours * 60 + breakMinutes;
+  var stime = starthours + ":" + startmin + " " + startamPm;
+  var etime = endhours + ":" + endmin + " " + endamPm;
+  // Convert the start and end times to 24 hour format
+  if (startamPm === "PM" && starthours !== "12") {
+    starthours = parseInt(starthours, 10) + 12;
+  }
+  if (endamPm === "PM" && endhours !== "12") {
+    endhours = parseInt(endhours, 10) + 12;
+  }
+
+  // Convert the start and end times to Date objects
+  var finalstart = new Date(1970, 0, 1, starthours, startmin, 0);
+  var finalend = new Date(1970, 0, 1, endhours, endmin, 0);
+
+  // Calculate the difference between the end time and start time in minutes
+  var diff1 = finalend - finalstart;
+  var workMinutes1 = diff1 / 60000;
+  
+  // Subtract the break duration from the total work minutes
+  workMinutes1 = workMinutes1 - breakDuration;
+  if (isNaN(workMinutes1)) {
+    continue;
+  }
+
+    // Add the work minutes for this day to the total work minutes for the week
+    totalMinutes += workMinutes1;
+  // Calculate the number of hours worked for this day
+  var dayHours1 = workMinutes1 / 60;
+
+  // Update the total hours for this day in the table
+  document.getElementById("totalHours" + i).innerHTML = dayHours1.toFixed(2) ;
+}
+
+  // Calculate the total hours for the week
+  var totalHours1=totalMinutes / 60;
+  document.getElementById("result").innerHTML = totalHours1.toFixed(2) ;
+  
+ 
+}
+
+    </script>
+  </body>
+</html>
